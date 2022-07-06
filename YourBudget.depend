@@ -1,0 +1,62 @@
+# depslib dependency file v1.0
+1656104078 source:c:\lenovobezpolskich\yourbudget\date.cpp
+	"Date.h"
+
+1656877641 source:c:\lenovobezpolskich\yourbudget\datemanager.cpp
+	"DateManager.h"
+
+1656877913 source:c:\lenovobezpolskich\yourbudget\main.cpp
+	<iostream>
+	"SupportingMethods.h"
+	"DateManager.h"
+	"Date.h"
+	<windows.h>
+	<cstdlib>
+	<string>
+
+1303070812 source:c:\lenovobezpolskich\yourbudget\markup.cpp
+	<stdio.h>
+	"Markup.h"
+	<errno.h>
+	<iconv.h>
+	<windows.h>
+	<mbstring.h>
+
+1303070812 c:\lenovobezpolskich\yourbudget\markup.h
+	<stdlib.h>
+	<string.h>
+	<string>
+	<afx.h>
+
+1656104098 c:\lenovobezpolskich\yourbudget\date.h
+	<iostream>
+	<string>
+
+1656877641 c:\lenovobezpolskich\yourbudget\datemanager.h
+	<iostream>
+	<string>
+	<sstream>
+	<ctime>
+	"Date.h"
+	<windows.h>
+	"SupportingMethods.h"
+
+1655287600 source:c:\lenovobezpolskich\yourbudget\additionalmethods.cpp
+	"AdditionalMethods.h"
+
+1655383377 c:\lenovobezpolskich\yourbudget\additionalmethods.h
+	<iostream>
+	<sstream>
+	<fstream>
+	<algorithm>
+
+1656256960 c:\lenovobezpolskich\yourbudget\supportingmethods.h
+	<iostream>
+	<sstream>
+	<fstream>
+	<algorithm>
+	"Date.h"
+
+1656366368 source:c:\lenovobezpolskich\yourbudget\supportingmethods.cpp
+	"SupportingMethods.h"
+
