@@ -1,14 +1,18 @@
 # depslib dependency file v1.0
-1654717771 source:c:\lenovobezpolskich\yourbudget\date.cpp
+1656104078 source:c:\lenovobezpolskich\yourbudget\date.cpp
 	"Date.h"
 
-1655583860 source:c:\lenovobezpolskich\yourbudget\datemanager.cpp
+1656877641 source:c:\lenovobezpolskich\yourbudget\datemanager.cpp
 	"DateManager.h"
 
-1655501113 source:c:\lenovobezpolskich\yourbudget\main.cpp
+1656877913 source:c:\lenovobezpolskich\yourbudget\main.cpp
 	<iostream>
 	"SupportingMethods.h"
 	"DateManager.h"
+	"Date.h"
+	<windows.h>
+	<cstdlib>
+	<string>
 
 1303070812 source:c:\lenovobezpolskich\yourbudget\markup.cpp
 	<stdio.h>
@@ -24,11 +28,11 @@
 	<string>
 	<afx.h>
 
-1654431087 c:\lenovobezpolskich\yourbudget\date.h
+1656104098 c:\lenovobezpolskich\yourbudget\date.h
 	<iostream>
 	<string>
 
-1655742146 c:\lenovobezpolskich\yourbudget\datemanager.h
+1656877641 c:\lenovobezpolskich\yourbudget\datemanager.h
 	<iostream>
 	<string>
 	<sstream>
@@ -46,12 +50,13 @@
 	<fstream>
 	<algorithm>
 
-1655386558 c:\lenovobezpolskich\yourbudget\supportingmethods.h
+1656256960 c:\lenovobezpolskich\yourbudget\supportingmethods.h
 	<iostream>
 	<sstream>
 	<fstream>
 	<algorithm>
+	"Date.h"
 
-1655387313 source:c:\lenovobezpolskich\yourbudget\supportingmethods.cpp
+1656366368 source:c:\lenovobezpolskich\yourbudget\supportingmethods.cpp
 	"SupportingMethods.h"
 

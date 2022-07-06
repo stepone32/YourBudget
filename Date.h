@@ -9,24 +9,24 @@ using namespace std;
 class Date{
 
 string date;
-string year;
-string month;
-string day;
+int year;
+int month;
+int day;
 
 public:
-    Date(string date="")
+    Date(string date= "")
     {
         this->date = date;
     }
 
-   void setYear(string newYear);
-   void setMonth(string newMonth);
-   void setDay(string newDay);
+   void setYear(int newYear);
+   void setMonth(int newMonth);
+   void setDay(int newDay);
 
    string getDate();
-   string getYear();
-   string getMonth();
-   string getDay();
+   int getYear();
+   int getMonth();
+   int getDay();
 
 };
 

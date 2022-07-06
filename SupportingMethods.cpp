@@ -16,17 +16,6 @@ int SupportingMethods::stringToIntConversion(string number)
     return numberInt;
 }
 
-string SupportingMethods::downloadNumber(string text, int &charPosition)
-{
-    string number = "";
-    while(isdigit(text[charPosition]) == true)
-    {
-        number += text[charPosition];
-        charPosition ++;
-    }
-    charPosition ++;
-    return number;
-}
 
 string SupportingMethods::loadLine()
 {
@@ -91,4 +80,36 @@ string SupportingMethods :: deleteDashFromDate(string date) {
     }
 
     return stringDateWithoutDash;
+}
+
+Date SupportingMethods :: convertingStringDateToDateClassObject(string dateString) {
+
+    Date enteringDate;
+
+    string yearString = "";
+    string monthString = "";
+    string dayString = "";
+
+
+    for(int charPosition = 0; charPosition >= 0 && charPosition <= 9; charPosition ++)
+    {
+
+        if(charPosition >= 0 && charPosition <=3 && isdigit(dateString[charPosition]) == true){
+            yearString += dateString[charPosition];
+        }else if(charPosition >= 5 && charPosition <=6 && isdigit(dateString[charPosition]) == true){
+            monthString += dateString[charPosition];
+        }else if(charPosition >= 8 && charPosition <=9 && isdigit(dateString[charPosition]) == true){
+            dayString += dateString[charPosition];
+        }
+
+    }
+    enteringDate.setYear(stringToIntConversion(yearString));
+    cout << "enteringDate.setYear: " << stringToIntConversion(yearString) << endl;
+    enteringDate.setMonth(stringToIntConversion(monthString));
+    cout << "enteringDate.setMonth: " << stringToIntConversion(monthString) << endl;
+    enteringDate.setDay(stringToIntConversion(dayString));
+    cout << "enteringDate.setDay: " << stringToIntConversion(dayString) << endl;
+
+    return enteringDate;
+
 }

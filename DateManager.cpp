@@ -44,75 +44,58 @@ bool DateManager :: checkLeapYear(int year)
 
 int DateManager :: maxNumberDays(int month, int year)
 {
-    cout << "maxNumberDays:" << DAYS_NUMBER[checkLeapYear(year)][month] << endl;
     return DAYS_NUMBER[checkLeapYear(year)][month];
 }
 
 bool DateManager :: isDayCorrect(int enteredDay, int enteredMonth, int enteredYear) {
 
     if (enteredDay >= 1 && (enteredDay <= maxNumberDays(enteredMonth, enteredYear))) {
-            cout << "isDayCorrect:" << "true" << endl;
+            cout << "isDayCorrect true" << endl;
             return true;
         } else{
-            cout << "isDayCorrect:" << "false" << endl;
+            cout << "isDayCorrect false" << endl;
             return false;
         }
 }
 
 bool DateManager :: isMonthCorrect(int enteredMonth) {
 
-   if (enteredMonth < 1 || enteredMonth > 12) {
-        cout << "isMonthCorrect:" << "false" << endl;
+   if (enteredMonth < 1 || enteredMonth > 12){
+        cout << "isMonthCorrect false" << enteredMonth << endl;
         return false;
     }
-   cout << "isMonthCorrect:" << "true" << endl;
+    cout << "isMonthCorrect true" << endl;
     return true;
 }
 
 bool DateManager :: isYearCorrect(int enteredYear) {
 
     if (enteredYear > getActualYear() || enteredYear < MIN_VALUE_YEAR) {
-            cout << "isYearCorrect:" << "false" << endl;
+        cout << "isYearCorrect false" << endl;
         return false;
     }
-    cout << "isYearCorrect:" << "true" << endl;
+    cout << "isYearCorrect true" << endl;
     return true;
 }
 
 bool DateManager :: isDateCorrect(string date) {
 
- int charPosition=0;
- int year = SupportingMethods::stringToIntConversion(SupportingMethods::downloadNumber(date, charPosition));
- cout << "Year:" << year << endl;
- int month = SupportingMethods::stringToIntConversion(SupportingMethods::downloadNumber(date, charPosition));
- cout << "Month:" << month << endl;
- cout << "charPosition:" << charPosition << endl;
- int day = SupportingMethods::stringToIntConversion(SupportingMethods::downloadNumber(date, charPosition));
- cout << "Day:" << day << endl;
- cout << "charPosition:" << charPosition << endl;
 
- maxNumberDays(month, year);
- isDayCorrect(day, month, year);
+Date enteringDate = (SupportingMethods :: convertingStringDateToDateClassObject(date));
+
 
     if (isDateFormatCorrect(date) == false) {
         return false;
-    } else if (isYearCorrect(year) == false) {
+    } else if (isYearCorrect(enteringDate.getYear()) == false) {
         return false;
-    } else if (isMonthCorrect(month) == false || month > getActualMonth()) {
+    } else if (isMonthCorrect(enteringDate.getMonth()) == false || ( enteringDate.getYear () == getActualYear() && enteringDate.getMonth() > getActualMonth())) {
         return false;
-    } else if (day >= 1 && day <= 31) {             //do usuniêcia dmax
-        if (isDayCorrect(day, month, year) == true) {
-                cout << "isDayCorrect:" << "true" << endl;
+    } else if (isDayCorrect(enteringDate.getDay(), enteringDate.getMonth(), enteringDate.getYear()) == true) {
             return true;
         } else {
-            cout << "isDayCorrect:" << "true" << endl;
             return false;
         }
-    } else {
-        cout << "isDayCorrect:" << "true" << endl;
-        return false;
-    }
-    cout << "isDateCorrect:" << "true" << endl;
+
     return true;
 
 }
@@ -120,20 +103,14 @@ bool DateManager :: isDateCorrect(string date) {
 bool DateManager :: isDateFormatCorrect(string date){
 
     if ((date.size() == 10)&&(date[0] == '2') && (date[4] == '-') && (date[7] == '-')){
-
-        cout << "isDateFormatCorrect:" << "true" << endl;
         return true;
     }else{
-        cout << "isDateFormatCorrect:" << "false" << endl;
-        cout << "date.size():" << date.size() << endl;
-        cout << "date[0]:" << date[0] << endl;
-        cout << "date[4]:" << date[4] << endl;
-        cout << "date[7]:" << date[7] << endl;
         return false;
     }
 }
 
-relationType DateManager :: comparedTo(Date dateA, Date dateB) {
+relationType DateManager :: dateAcomparedToDateB(Date dateA, Date dateB) {
+
 if (dateA.getYear() < dateB.getYear())
     return Precedes;
 if (dateA.getYear() > dateB.getYear())
@@ -147,4 +124,32 @@ if (dateA.getDay() < dateB.getDay())
 if (dateA.getDay() > dateB.getDay())
     return Follows;
 return Same;
+}
+
+Date DateManager :: enterDate(){
+     string enteringDate = "";
+     DateManager dateManager;
+
+    do {
+            cout << "Enter date in format YYYY-MM-DD: ";
+
+            enteringDate = (SupportingMethods :: loadLine());
+            dateManager.isDateCorrect(enteringDate);
+
+        } while (dateManager.isDateCorrect(enteringDate) == false);
+
+
+    return SupportingMethods :: convertingStringDateToDateClassObject(enteringDate);
+
+ }
+
+
+void DateManager :: displayDate(DateManager date)
+{
+    cout << "Rok: " << date.getActualYear() << endl;
+    cout << "miesiac: " << date.getActualMonth() << endl;
+    cout << "dzien: " << date.getActualDay() << endl;
+    system("pause");
+
+
 }

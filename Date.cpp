@@ -1,16 +1,16 @@
 #include "Date.h"
 
-void Date :: setYear(string newYear)
+void Date :: setYear(int newYear)
 {
     year = newYear;
 }
 
-void Date :: setMonth(string newMonth)
+void Date :: setMonth(int newMonth)
 {
     month = newMonth;
 }
 
-void Date :: setDay(string newDay)
+void Date :: setDay(int newDay)
 {
     day = newDay;
 }
@@ -20,17 +20,17 @@ string Date :: getDate()
     return date;
 }
 
-string Date :: getYear()
+int Date :: getYear()
 {
     return year;
 }
 
-string Date :: getMonth()
+int Date :: getMonth()
 {
     return month;
 }
 
-string Date :: getDay()
+int Date :: getDay()
 {
     return day;
 }

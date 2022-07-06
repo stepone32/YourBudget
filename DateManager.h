@@ -32,14 +32,15 @@ public:
     bool checkLeapYear(int year);
     int maxNumberDays(int month, int year);
 
+    Date enterDate();
     bool isDayCorrect(int enteredDay, int enteredMonth, int enteredYear);
     bool isMonthCorrect(int enteredMonth);
     bool isYearCorrect(int enteredYear);
     bool isDateCorrect(string date);
     bool isDateFormatCorrect(string date);
+    void displayDate(DateManager date);
 
-
-    relationType comparedTo(Date dateA, Date dateB);
+    relationType dateAcomparedToDateB(Date dateA, Date dateB);
 
 };
 #endif //DATEMANAGER_H
